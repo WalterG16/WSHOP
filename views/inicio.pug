@@ -40,16 +40,14 @@ block contenido
         function updateCarousel() {
             carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
-        // Configurar el auto-desplazamiento
+
         function autoSlide() {
             currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
             updateCarousel();
         }
 
-        // Intervalo para el auto-desplazamiento
         let autoSlideInterval = setInterval(autoSlide, intervalTime);
 
-        // Reiniciar el auto-desplazamiento al interactuar con los botones
         function resetAutoSlide() {
             clearInterval(autoSlideInterval);
             autoSlideInterval = setInterval(autoSlide, intervalTime);
